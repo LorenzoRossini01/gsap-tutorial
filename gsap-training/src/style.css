@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+.container {
+  margin: 2rem;
+}
+
+.square {
+  width: 200px;
+  aspect-ratio: 1;
+}
