@@ -4,7 +4,16 @@
   margin: 2rem;
 }
 
-.square {
+.square,
+.circle {
   width: 200px;
   aspect-ratio: 1;
+}
+.rect {
+  width: 400px;
+  aspect-ratio: 2;
+}
+
+.circle {
+  border-radius: 50%;
 }

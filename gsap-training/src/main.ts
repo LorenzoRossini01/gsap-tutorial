@@ -4,7 +4,7 @@ import { gsap } from "gsap";
 // const red = document.querySelector<HTMLElement>(".red");
 // const blue = document.querySelector<HTMLElement>(".blue");
 // const orange = document.querySelector<HTMLElement>(".orange");
-const squares = document.querySelectorAll<HTMLElement>(".square");
+// const squares = document.querySelectorAll<HTMLElement>(".square");
 
 // gsap.to(squares, {
 //   x: 500,
@@ -24,26 +24,26 @@ const squares = document.querySelectorAll<HTMLElement>(".square");
 //   delay: 2.5,
 // });
 
-gsap.fromTo(
-  squares,
-  {
-    autoAlpha: 0,
-    x: 300,
-    scale: 20,
-    rotate: 180,
-  },
-  {
-    autoAlpha: 1,
-    rotate: 0,
-    x: 0,
-    y: 200,
-    scale: 0.5,
-    backgroundColor: "green",
-    delay: 0.5,
-    duration: 1,
-    ease: "elastic",
-  }
-);
+// gsap.fromTo(
+//   squares,
+//   {
+//     autoAlpha: 0,
+//     x: 300,
+//     scale: 20,
+//     rotate: 180,
+//   },
+//   {
+//     autoAlpha: 1,
+//     rotate: 0,
+//     x: 0,
+//     y: 200,
+//     scale: 0.5,
+//     backgroundColor: "green",
+//     delay: 0.5,
+//     duration: 1,
+//     ease: "elastic",
+//   }
+// );
 
 // red?.addEventListener("mouseenter", () => {
 //   gsap.fromTo(
@@ -84,3 +84,23 @@ gsap.fromTo(
 //     duration: 1,
 //   });
 // });
+
+// ### EASE
+
+document.querySelector("button")?.addEventListener("click", () => {
+  gsap.to(".square", {
+    x: 500,
+    duration: 3,
+    ease: "elastic.out",
+  });
+  gsap.to(".rect", {
+    x: 500,
+    duration: 3,
+    ease: "sine.inOut",
+  });
+  gsap.to(".circle", {
+    x: 500,
+    duration: 3,
+    ease: "expo",
+  });
+});
