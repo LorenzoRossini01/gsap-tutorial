@@ -1,6 +1,8 @@
 import "./style.css";
 
 import { gsap } from "gsap";
+
+const buttonStart = document.querySelector(".start");
 // const red = document.querySelector<HTMLElement>(".red");
 // const blue = document.querySelector<HTMLElement>(".blue");
 // const orange = document.querySelector<HTMLElement>(".orange");
@@ -87,7 +89,7 @@ import { gsap } from "gsap";
 
 // ### EASE
 
-// document.querySelector("button")?.addEventListener("click", () => {
+// buttonStart?.addEventListener("click", () => {
 //   gsap.to(".square", {
 //     x: 500,
 //     duration: 3,
@@ -117,7 +119,7 @@ import { gsap } from "gsap";
 //   y: -200,
 // });
 
-// document.querySelector(".start")?.addEventListener("click", () => {
+// buttonStart?.addEventListener("click", () => {
 //   gsap.to("header li", {
 //     autoAlpha: 1,
 //     y: 0,
@@ -131,7 +133,7 @@ import { gsap } from "gsap";
 // });
 
 // ### REPEAT & YOYO
-// document.querySelector(".start")?.addEventListener("click", () => {
+// buttonStart?.addEventListener("click", () => {
 //   gsap.to(".circle", {
 //     // y: 100,
 //     autoAlpha: 0,
@@ -150,7 +152,7 @@ import { gsap } from "gsap";
 //   });
 // });
 
-// document.querySelector(".start")?.addEventListener("click", () => {
+// buttonStart?.addEventListener("click", () => {
 //   gsap.to(".square", {
 //     // rotate: "random(0,180)",
 //     x: "+=50",
@@ -167,7 +169,7 @@ import { gsap } from "gsap";
 
 // ### CALLBACK FUNCTIONS
 
-// document.querySelector(".start")?.addEventListener("click", () => {
+// buttonStart?.addEventListener("click", () => {
 //   const tween = gsap.to(".square", {
 //     duration: 1,
 //     ease: "sine.in",
@@ -198,26 +200,46 @@ import { gsap } from "gsap";
 // });
 
 // ### GET TWEEN METHODS
-const tween = gsap.to(".square", {
-  id: "square-tween",
-  duration: 5,
-  ease: "sine.out",
-  x: 500,
-  y: 200,
-  backgroundColor: "#ff9922",
-});
+// const tween = gsap.to(".square", {
+//   id: "square-tween",
+//   duration: 5,
+//   ease: "sine.out",
+//   x: 500,
+//   y: 200,
+//   backgroundColor: "#ff9922",
+// });
 
-document.querySelector(".start")?.addEventListener("click", () => {
-  const tweens = gsap.getTweensOf(".square");
-  const squareTween = gsap.getById("square-tween");
+// buttonStart?.addEventListener("click", () => {
+//   const tweens = gsap.getTweensOf(".square");
+//   const squareTween = gsap.getById("square-tween");
 
-  console.log(tweens);
-  console.log(squareTween);
+//   console.log(tweens);
+//   console.log(squareTween);
 
-  // console.log("tween Is Teewning " + gsap.isTweening(".square"));
-  // console.log("tween Is Active " + tween.isActive());
-  // gsap.killTweensOf(".square", "backgroundColor,y");
-  // tween.kill(".active", "backgroundColor,y");
-  // console.log("tween Is Teewning " + gsap.isTweening(".square"));
-  // console.log("tween Is Active " + tween.isActive());
+// console.log("tween Is Teewning " + gsap.isTweening(".square"));
+// console.log("tween Is Active " + tween.isActive());
+// gsap.killTweensOf(".square", "backgroundColor,y");
+// tween.kill(".active", "backgroundColor,y");
+// console.log("tween Is Teewning " + gsap.isTweening(".square"));
+// console.log("tween Is Active " + tween.isActive());
+// });
+
+// ### GSAP SNAP PLUGIN
+
+buttonStart?.addEventListener("click", () => {
+  const tween = gsap.to(".square", {
+    id: "square-tween",
+    duration: 5,
+    ease: "sine.out",
+    x: 500,
+    backgroundColor: "#ff9922",
+    snap: {
+      // x: "20",
+      // x: [0, 100, 250, 500],
+      x: {
+        values: [0, 100, 250, 500],
+        radius: 30,
+      },
+    },
+  });
 });
