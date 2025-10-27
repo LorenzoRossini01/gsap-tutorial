@@ -110,10 +110,12 @@ import { gsap } from "gsap";
 
 // console.log(dataNumberSquare, widthSquare);
 
-gsap.set("header li", {
-  autoAlpha: 0,
-  y: -200,
-});
+// ### STAGGER
+
+// gsap.set("header li", {
+//   autoAlpha: 0,
+//   y: -200,
+// });
 
 // document.querySelector(".start")?.addEventListener("click", () => {
 //   gsap.to("header li", {
@@ -127,19 +129,38 @@ gsap.set("header li", {
 //     ease: "elastic",
 //   });
 // });
+
+// ### REPEAT & YOYO
 document.querySelector(".start")?.addEventListener("click", () => {
   gsap.to(".circle", {
     // y: 100,
     autoAlpha: 0,
     stagger: {
+      repeat: -1,
+      yoyo: true,
       // each: 0.1,
-      amount: 3,
+      amount: 1,
       from: "random",
       grid: "auto",
       axis: "x",
-      ease: "bounce.in",
+      // ease: "bounce.in",
     },
+    duration: 0.5,
+    // ease: "power3.out",
+  });
+});
+
+document.querySelector(".start")?.addEventListener("click", () => {
+  gsap.to(".square", {
+    // rotate: "random(0,180)",
+    x: "+=50",
     duration: 1,
-    ease: "power3.out",
+    ease: "power2.inOut",
+    // repeat: 3,
+    // repeatDelay: 0.5,
+    // yoyo: true,
+    repeat: -1,
+    // repeatDelay: 0.5,
+    repeatRefresh: true,
   });
 });

@@ -2,7 +2,7 @@
 
 .square,
 .circle {
-  width: 50px;
+  width: 200px;
   aspect-ratio: 1;
 }
 .rect {
@@ -11,5 +11,6 @@
 }
 
 .circle {
+  width: 50px;
   border-radius: 50%;
 }
