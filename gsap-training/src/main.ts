@@ -246,42 +246,100 @@ const buttonStart = document.querySelector(".start");
 
 // ## PLAY, PAUSE, RESUME, RESTART, REVERSE, REVERT
 
-const playButton = document.querySelector(".play");
-const pauseButton = document.querySelector(".pause");
-const resumeButton = document.querySelector(".resume");
-const restartButton = document.querySelector(".restart");
-const reverseButton = document.querySelector(".reverse");
-const revertButton = document.querySelector(".revert");
+// const playButton = document.querySelector(".play");
+// const pauseButton = document.querySelector(".pause");
+// const resumeButton = document.querySelector(".resume");
+// const restartButton = document.querySelector(".restart");
+// const reverseButton = document.querySelector(".reverse");
+// const revertButton = document.querySelector(".revert");
+
+// const tween = gsap.to(".square", {
+//   id: "square-tween",
+//   duration: 5,
+//   ease: "sine.out",
+//   x: 300,
+//   rotation: 360,
+//   backgroundColor: "#ff9922",
+//   paused: true,
+// });
+
+// playButton?.addEventListener("click", () => {
+//   tween.play();
+// });
+// pauseButton?.addEventListener("click", () => {
+//   tween.pause();
+// });
+// resumeButton?.addEventListener("click", () => {
+//   tween.resume();
+// });
+// restartButton?.addEventListener("click", () => {
+//   tween.restart();
+// });
+// reverseButton?.addEventListener("click", () => {
+//   if (tween.reversed()) {
+//     tween.play();
+//   } else {
+//     tween.reverse();
+//   }
+// });
+// revertButton?.addEventListener("click", () => {
+//   tween.revert();
+// });
+
+// ### gsap keyframes
 
 const tween = gsap.to(".square", {
-  id: "square-tween",
-  duration: 5,
-  ease: "sine.out",
-  x: 300,
-  rotation: 360,
-  backgroundColor: "#ff9922",
+  keyframes: [
+    {
+      x: 300,
+      ease: "none",
+      duration: 2,
+      onComplete: () => {
+        console.log("complete 1");
+      },
+    },
+    {
+      y: 100,
+      ease: "power2.in",
+      duration: 0.5,
+    },
+    {
+      x: 600,
+    },
+    {
+      y: 0,
+    },
+  ],
+  // keyframes: {
+  //   "20%": {
+  //     x: 300,
+  //     y: 0,
+  //   },
+  //   "50%": {
+  //     x: 300,
+  //     y: 200,
+  //   },
+  //   "70%": {
+  //     x: 600,
+  //     y: 200,
+  //   },
+  //   "100%": {
+  //     x: 600,
+  //     y: 0,
+  //   },
+  //   // ease: "power2.out",
+  //   easeEach: "bounce.out",
+  // },
+  // keyframes: {
+  //   x: [0, 300, 300, 600, 600],
+  //   y: [0, 0, 200, 200, 0],
+  //   easeEach: "bounce.out",
+  // },
   paused: true,
+  ease: "power3.out",
+  duration: 4,
 });
 
-playButton?.addEventListener("click", () => {
-  tween.play();
-});
-pauseButton?.addEventListener("click", () => {
-  tween.pause();
-});
-resumeButton?.addEventListener("click", () => {
-  tween.resume();
-});
-restartButton?.addEventListener("click", () => {
-  tween.restart();
-});
-reverseButton?.addEventListener("click", () => {
-  if (tween.reversed()) {
-    tween.play();
-  } else {
-    tween.reverse();
-  }
-});
-revertButton?.addEventListener("click", () => {
-  tween.revert();
+buttonStart?.addEventListener("click", () => {
+  tween.play(0);
 });
