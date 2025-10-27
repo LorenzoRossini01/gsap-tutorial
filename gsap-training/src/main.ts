@@ -288,58 +288,95 @@ const buttonStart = document.querySelector(".start");
 
 // ### gsap keyframes
 
-const tween = gsap.to(".square", {
-  keyframes: [
-    {
-      x: 300,
-      ease: "none",
-      duration: 2,
-      onComplete: () => {
-        console.log("complete 1");
-      },
-    },
-    {
-      y: 100,
-      ease: "power2.in",
-      duration: 0.5,
-    },
-    {
-      x: 600,
-    },
-    {
-      y: 0,
-    },
-  ],
-  // keyframes: {
-  //   "20%": {
-  //     x: 300,
-  //     y: 0,
-  //   },
-  //   "50%": {
-  //     x: 300,
-  //     y: 200,
-  //   },
-  //   "70%": {
-  //     x: 600,
-  //     y: 200,
-  //   },
-  //   "100%": {
-  //     x: 600,
-  //     y: 0,
-  //   },
-  //   // ease: "power2.out",
-  //   easeEach: "bounce.out",
-  // },
-  // keyframes: {
-  //   x: [0, 300, 300, 600, 600],
-  //   y: [0, 0, 200, 200, 0],
-  //   easeEach: "bounce.out",
-  // },
-  paused: true,
-  ease: "power3.out",
-  duration: 4,
+// const tween = gsap.to(".square", {
+//   keyframes: [
+//     {
+//       x: 300,
+//       ease: "none",
+//       duration: 2,
+//       onComplete: () => {
+//         console.log("complete 1");
+//       },
+//     },
+//     {
+//       y: 100,
+//       ease: "power2.in",
+//       duration: 0.5,
+//     },
+//     {
+//       x: 600,
+//     },
+//     {
+//       y: 0,
+//     },
+//   ],
+//   // keyframes: {
+//   //   "20%": {
+//   //     x: 300,
+//   //     y: 0,
+//   //   },
+//   //   "50%": {
+//   //     x: 300,
+//   //     y: 200,
+//   //   },
+//   //   "70%": {
+//   //     x: 600,
+//   //     y: 200,
+//   //   },
+//   //   "100%": {
+//   //     x: 600,
+//   //     y: 0,
+//   //   },
+//   //   // ease: "power2.out",
+//   //   easeEach: "bounce.out",
+//   // },
+//   // keyframes: {
+//   //   x: [0, 300, 300, 600, 600],
+//   //   y: [0, 0, 200, 200, 0],
+//   //   easeEach: "bounce.out",
+//   // },
+//   paused: true,
+//   ease: "power3.out",
+//   duration: 4,
+// });
+
+// buttonStart?.addEventListener("click", () => {
+//   tween.play(0);
+// });
+
+// ### gsap scrollTo
+
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+
+gsap.registerPlugin(ScrollToPlugin);
+
+const internalLink = document.querySelectorAll('a[href^="#"]');
+const backtoTopButton = document.querySelector(".backtoTop");
+
+backtoTopButton?.addEventListener("click", () => {
+  gsap.to(window, {
+    duration: 2,
+    ease: "power3.out",
+    scrollTo: { y: 0, offsetY: 75 },
+  });
 });
 
-buttonStart?.addEventListener("click", () => {
-  tween.play(0);
+internalLink.forEach((link) => {
+  const anchor = link as HTMLAnchorElement;
+  console.log(anchor);
+
+  const hash = anchor.hash;
+
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+    gsap.to(window, {
+      duration: 1,
+      ease: "power3.out",
+      scrollTo: {
+        y: hash,
+        offsetY: 75,
+        autoKill: true,
+      },
+    });
+  });
 });

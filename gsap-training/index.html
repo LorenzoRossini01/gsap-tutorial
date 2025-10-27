@@ -7,16 +7,108 @@
     <title>gsap-training</title>
   </head>
   <body>
-    <!-- <header>
-      <div class="">
+    <header class="fixed fixed-top right-0 left-0">
+      <nav class="navbar bg-black text-white h-[75px]">
         <ul class="flex py-4 justify-end">
-          <li class="px-8 leading-loose">home</li>
-          <li class="px-8 leading-loose">services</li>
-          <li class="px-8 leading-loose">partners</li>
-          <li class="px-8 leading-loose">contacts</li>
+          <li class="px-8 leading-loose"><a href="#home">home</a></li>
+          <li class="px-8 leading-loose"><a href="#services">services</a></li>
+          <li class="px-8 leading-loose"><a href="#mission">mission</a></li>
+          <li class="px-8 leading-loose"><a href="#partners">partners</a></li>
+          <li class="px-8 leading-loose"><a href="#contacts">contacts</a></li>
         </ul>
+      </nav>
+    </header>
+    <section
+      id="home"
+      class="h-screen px-16 bg-black text-lime-300 flex flex-col justify-center"
+    >
+      <h1 class="text-6xl font-bold max-w-[60%]">
+        GSAP: the power of ScrollTo Plugin
+      </h1>
+      <a href="#contacts" class="text-white underline">contact us</a>
+    </section>
+
+    <section
+      id="services"
+      class="h-screen bg-indigo-100 p-16 flex flex-col gap-16"
+    >
+      <h2 class="text-3xl font-bold text-center capitalize">services</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus,
+        distinctio ratione! Impedit, ea? Soluta, culpa blanditiis. Illo maiores
+        officiis sit non fuga dolor totam odio placeat inventore animi! Veniam,
+        adipisci. Officiis quia earum sint nulla quasi provident inventore
+        libero culpa. Quis incidunt sint delectus placeat harum accusantium
+        tempora odit, ea modi deleniti reprehenderit, repellendus, facere iusto
+        nesciunt a natus consectetur?
+      </p>
+      <ul class="grid grid-cols-3 text-blue-950 font-extrabold">
+        <li>- value 1</li>
+        <li>- value 2</li>
+        <li>- value 3</li>
+        <li>- value 4</li>
+        <li>- value 5</li>
+        <li>- value 6</li>
+      </ul>
+    </section>
+    <section id="mission" class="h-screen p-16">
+      <h2 class="text-3xl font-bold text-center capitalize">mission</h2>
+      <div class="grid grid-cols-2 mt-16">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus,
+          distinctio ratione! Impedit, ea? Soluta, culpa blanditiis. Illo
+          maiores officiis sit non fuga dolor totam odio placeat inventore
+          animi! Veniam, adipisci. Officiis quia earum sint nulla quasi
+          provident inventore libero culpa. Quis incidunt sint delectus placeat
+          harum accusantium tempora odit, ea modi deleniti reprehenderit,
+          repellendus, facere iusto nesciunt a natus consectetur?
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus,
+          distinctio ratione! Impedit, ea? Soluta, culpa blanditiis. Illo
+          maiores officiis sit non fuga dolor totam odio placeat inventore
+          animi! Veniam, adipisci. Officiis quia earum sint nulla quasi
+          provident inventore libero culpa. Quis incidunt sint delectus placeat
+          harum accusantium tempora odit, ea modi deleniti reprehenderit,
+          repellendus, facere iusto nesciunt a natus consectetur?
+        </p>
       </div>
-    </header> -->
+    </section>
+
+    <section
+      id="partners"
+      class="h-screen bg-indigo-100 p-16 flex flex-col gap-16"
+    >
+      <h2 class="text-3xl font-bold text-center capitalize">Partners</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus,
+        distinctio ratione! Impedit, ea? Soluta, culpa blanditiis. Illo maiores
+        officiis sit non fuga dolor totam odio placeat inventore animi! Veniam,
+        adipisci. Officiis quia earum sint nulla quasi provident inventore
+        libero culpa. Quis incidunt sint delectus placeat harum accusantium
+        tempora odit, ea modi deleniti reprehenderit, repellendus, facere iusto
+        nesciunt a natus consectetur?
+      </p>
+      <ul class="grid grid-cols-3 text-blue-950 font-extrabold">
+        <li>- value 1</li>
+        <li>- value 2</li>
+        <li>- value 3</li>
+        <li>- value 4</li>
+        <li>- value 5</li>
+        <li>- value 6</li>
+      </ul>
+    </section>
+
+    <footer
+      id="contacts"
+      class="h-[300px] px-16 flex flex-col justify-center bg-blue-950"
+    >
+      <h2 class="text-6xl font-bold text-white">We are footer!</h2>
+      <div class="w-full flex justify-end">
+        <span class="text-lime-300 backtoTop">back to top</span>
+      </div>
+    </footer>
+
     <!-- <div class="w-screen grid grid-cols-11 gap-8 mx-16">
       <div class="circle bg-amber-100"></div>
       <div class="circle bg-amber-200"></div>
@@ -64,15 +156,15 @@
       <div class="circle bg-amber-100"></div>
     </div> -->
 
-    <div class="m-16">
-      <div class="square bg-green-400"></div>
-      <!-- <div class="square active bg-green-400"></div> -->
-    </div>
+    <!-- <div class="m-16">
+      <div class="square bg-green-400"></div> -->
+    <!-- <div class="square active bg-green-400"></div> -->
+    <!-- </div>
     <div class="mx-16">
       <button class="start rounded-lg bg-blue-500 text-white py-3 px-6">
         play
-      </button>
-      <!-- <button class="play rounded-lg bg-blue-500 text-white py-3 px-6">
+      </button> -->
+    <!-- <button class="play rounded-lg bg-blue-500 text-white py-3 px-6">
         play
       </button>
       <button class="pause rounded-lg bg-yellow-500 text-white py-3 px-6">
@@ -90,7 +182,7 @@
       <button class="revert rounded-lg bg-orange-500 text-white py-3 px-6">
         revert
       </button> -->
-    </div>
+    <!-- </div> -->
 
     <script type="module" src="/src/main.ts"></script>
   </body>
