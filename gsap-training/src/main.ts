@@ -105,7 +105,41 @@ import { gsap } from "gsap";
 //   });
 // });
 
-const dataNumberSquare = gsap.getProperty(".square", "data-number");
-const widthSquare = gsap.getProperty(".square", "width");
+// const dataNumberSquare = gsap.getProperty(".square", "data-number");
+// const widthSquare = gsap.getProperty(".square", "width");
 
-console.log(dataNumberSquare, widthSquare);
+// console.log(dataNumberSquare, widthSquare);
+
+gsap.set("header li", {
+  autoAlpha: 0,
+  y: -200,
+});
+
+// document.querySelector(".start")?.addEventListener("click", () => {
+//   gsap.to("header li", {
+//     autoAlpha: 1,
+//     y: 0,
+//     stagger: {
+//       // each:0.1,
+//       amount: 4,
+//     },
+//     duration: 2,
+//     ease: "elastic",
+//   });
+// });
+document.querySelector(".start")?.addEventListener("click", () => {
+  gsap.to(".circle", {
+    // y: 100,
+    autoAlpha: 0,
+    stagger: {
+      // each: 0.1,
+      amount: 3,
+      from: "random",
+      grid: "auto",
+      axis: "x",
+      ease: "bounce.in",
+    },
+    duration: 1,
+    ease: "power3.out",
+  });
+});

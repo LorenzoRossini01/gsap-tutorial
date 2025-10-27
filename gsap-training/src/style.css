@@ -1,12 +1,8 @@
 @import "tailwindcss";
 
-.container {
-  margin: 2rem;
-}
-
 .square,
 .circle {
-  width: 200px;
+  width: 50px;
   aspect-ratio: 1;
 }
 .rect {
