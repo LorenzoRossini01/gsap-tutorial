@@ -167,32 +167,57 @@ import { gsap } from "gsap";
 
 // ### CALLBACK FUNCTIONS
 
-document.querySelector(".start")?.addEventListener("click", () => {
-  const tween = gsap.to(".square", {
-    duration: 1,
-    ease: "sine.in",
-    x: 200,
-    borderRadius: 10,
-    backgroundColor: "#ff9922",
-    repeat: -1,
-    onRepeat: () => {
-      console.log("repeat");
-    },
-    // onStart: () => {
-    //   console.log("started");
-    // },
-    // onComplete: () => {
-    //   console.log("completed");
-    // },
-    // onInterrupt: () => {
-    //   console.log("interrupted");
-    // },
-    // onUpdate: () => {
-    //   console.log("Updated");
-    // },
-  });
+// document.querySelector(".start")?.addEventListener("click", () => {
+//   const tween = gsap.to(".square", {
+//     duration: 1,
+//     ease: "sine.in",
+//     x: 200,
+//     borderRadius: 10,
+//     backgroundColor: "#ff9922",
+//     repeat: -1,
+//     onRepeat: () => {
+//       console.log("repeat");
+//     },
+//     // onStart: () => {
+//     //   console.log("started");
+//     // },
+//     // onComplete: () => {
+//     //   console.log("completed");
+//     // },
+//     // onInterrupt: () => {
+//     //   console.log("interrupted");
+//     // },
+//     // onUpdate: () => {
+//     //   console.log("Updated");
+//     // },
+//   });
 
-  // setTimeout(() => {
-  //   tween.kill();
-  // }, 2000);
+//   // setTimeout(() => {
+//   //   tween.kill();
+//   // }, 2000);
+// });
+
+// ### GET TWEEN METHODS
+const tween = gsap.to(".square", {
+  id: "square-tween",
+  duration: 5,
+  ease: "sine.out",
+  x: 500,
+  y: 200,
+  backgroundColor: "#ff9922",
+});
+
+document.querySelector(".start")?.addEventListener("click", () => {
+  const tweens = gsap.getTweensOf(".square");
+  const squareTween = gsap.getById("square-tween");
+
+  console.log(tweens);
+  console.log(squareTween);
+
+  // console.log("tween Is Teewning " + gsap.isTweening(".square"));
+  // console.log("tween Is Active " + tween.isActive());
+  // gsap.killTweensOf(".square", "backgroundColor,y");
+  // tween.kill(".active", "backgroundColor,y");
+  // console.log("tween Is Teewning " + gsap.isTweening(".square"));
+  // console.log("tween Is Active " + tween.isActive());
 });
