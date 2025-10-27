@@ -131,36 +131,68 @@ import { gsap } from "gsap";
 // });
 
 // ### REPEAT & YOYO
-document.querySelector(".start")?.addEventListener("click", () => {
-  gsap.to(".circle", {
-    // y: 100,
-    autoAlpha: 0,
-    stagger: {
-      repeat: -1,
-      yoyo: true,
-      // each: 0.1,
-      amount: 1,
-      from: "random",
-      grid: "auto",
-      axis: "x",
-      // ease: "bounce.in",
-    },
-    duration: 0.5,
-    // ease: "power3.out",
-  });
-});
+// document.querySelector(".start")?.addEventListener("click", () => {
+//   gsap.to(".circle", {
+//     // y: 100,
+//     autoAlpha: 0,
+//     stagger: {
+//       repeat: -1,
+//       yoyo: true,
+//       // each: 0.1,
+//       amount: 1,
+//       from: "random",
+//       grid: "auto",
+//       axis: "x",
+//       // ease: "bounce.in",
+//     },
+//     duration: 0.5,
+//     // ease: "power3.out",
+//   });
+// });
+
+// document.querySelector(".start")?.addEventListener("click", () => {
+//   gsap.to(".square", {
+//     // rotate: "random(0,180)",
+//     x: "+=50",
+//     duration: 1,
+//     ease: "power2.inOut",
+//     // repeat: 3,
+//     // repeatDelay: 0.5,
+//     // yoyo: true,
+//     repeat: -1,
+//     // repeatDelay: 0.5,
+//     repeatRefresh: true,
+//   });
+// });
+
+// ### CALLBACK FUNCTIONS
 
 document.querySelector(".start")?.addEventListener("click", () => {
-  gsap.to(".square", {
-    // rotate: "random(0,180)",
-    x: "+=50",
+  const tween = gsap.to(".square", {
     duration: 1,
-    ease: "power2.inOut",
-    // repeat: 3,
-    // repeatDelay: 0.5,
-    // yoyo: true,
+    ease: "sine.in",
+    x: 200,
+    borderRadius: 10,
+    backgroundColor: "#ff9922",
     repeat: -1,
-    // repeatDelay: 0.5,
-    repeatRefresh: true,
+    onRepeat: () => {
+      console.log("repeat");
+    },
+    // onStart: () => {
+    //   console.log("started");
+    // },
+    // onComplete: () => {
+    //   console.log("completed");
+    // },
+    // onInterrupt: () => {
+    //   console.log("interrupted");
+    // },
+    // onUpdate: () => {
+    //   console.log("Updated");
+    // },
   });
+
+  // setTimeout(() => {
+  //   tween.kill();
+  // }, 2000);
 });
