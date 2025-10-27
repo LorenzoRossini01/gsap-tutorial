@@ -87,20 +87,25 @@ import { gsap } from "gsap";
 
 // ### EASE
 
-document.querySelector("button")?.addEventListener("click", () => {
-  gsap.to(".square", {
-    x: 500,
-    duration: 3,
-    ease: "elastic.out",
-  });
-  gsap.to(".rect", {
-    x: 500,
-    duration: 3,
-    ease: "sine.inOut",
-  });
-  gsap.to(".circle", {
-    x: 500,
-    duration: 3,
-    ease: "expo",
-  });
-});
+// document.querySelector("button")?.addEventListener("click", () => {
+//   gsap.to(".square", {
+//     x: 500,
+//     duration: 3,
+//     ease: "elastic.out",
+//   });
+//   gsap.to(".rect", {
+//     x: 500,
+//     duration: 3,
+//     ease: "sine.inOut",
+//   });
+//   gsap.to(".circle", {
+//     x: 500,
+//     duration: 3,
+//     ease: "expo",
+//   });
+// });
+
+const dataNumberSquare = gsap.getProperty(".square", "data-number");
+const widthSquare = gsap.getProperty(".square", "width");
+
+console.log(dataNumberSquare, widthSquare);
