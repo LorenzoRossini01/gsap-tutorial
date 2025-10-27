@@ -226,20 +226,62 @@ const buttonStart = document.querySelector(".start");
 
 // ### GSAP SNAP PLUGIN
 
-buttonStart?.addEventListener("click", () => {
-  const tween = gsap.to(".square", {
-    id: "square-tween",
-    duration: 5,
-    ease: "sine.out",
-    x: 500,
-    backgroundColor: "#ff9922",
-    snap: {
-      // x: "20",
-      // x: [0, 100, 250, 500],
-      x: {
-        values: [0, 100, 250, 500],
-        radius: 30,
-      },
-    },
-  });
+// buttonStart?.addEventListener("click", () => {
+//   const tween = gsap.to(".square", {
+//     id: "square-tween",
+//     duration: 5,
+//     ease: "sine.out",
+//     x: 500,
+//     backgroundColor: "#ff9922",
+//     snap: {
+//       // x: "20",
+//       // x: [0, 100, 250, 500],
+//       x: {
+//         values: [0, 100, 250, 500],
+//         radius: 30,
+//       },
+//     },
+//   });
+// });
+
+// ## PLAY, PAUSE, RESUME, RESTART, REVERSE, REVERT
+
+const playButton = document.querySelector(".play");
+const pauseButton = document.querySelector(".pause");
+const resumeButton = document.querySelector(".resume");
+const restartButton = document.querySelector(".restart");
+const reverseButton = document.querySelector(".reverse");
+const revertButton = document.querySelector(".revert");
+
+const tween = gsap.to(".square", {
+  id: "square-tween",
+  duration: 5,
+  ease: "sine.out",
+  x: 300,
+  rotation: 360,
+  backgroundColor: "#ff9922",
+  paused: true,
+});
+
+playButton?.addEventListener("click", () => {
+  tween.play();
+});
+pauseButton?.addEventListener("click", () => {
+  tween.pause();
+});
+resumeButton?.addEventListener("click", () => {
+  tween.resume();
+});
+restartButton?.addEventListener("click", () => {
+  tween.restart();
+});
+reverseButton?.addEventListener("click", () => {
+  if (tween.reversed()) {
+    tween.play();
+  } else {
+    tween.reverse();
+  }
+});
+revertButton?.addEventListener("click", () => {
+  tween.revert();
 });
